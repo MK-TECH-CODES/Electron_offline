@@ -1,0 +1,44 @@
+{
+  "name": "electron_learning",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build_mos": "electron-builder -mwl",
+    "build_win_64": "electron-builder --win --x64",
+    "build_win_32": "electron-builder --win --ia32",
+    "build_linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.yourcompany.electronlearning",
+    "productName": "ElectronLearningApp",
+    "directories": {
+      "output": "dist_32"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "electronDownload": {
+      "cache": "./electron_cache/electron"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "My Electron app",
+  "devDependencies": {
+    "electron": "^36.2.1",
+    "electron-builder": "^26.0.12"
+  }
+}
